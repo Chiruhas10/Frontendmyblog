@@ -10,7 +10,19 @@ const AddBlog = () => {
   const SubmitHandler = (e)=>{
     e.preventDefault()
     console.log(Blog)
-    axios.post(`https://servermyblog-p74i.onrender.com/Blogs`, Blog)
+    axios.post(`https://servermyblog-p74i.onrender.com/Blogs`, {
+    title,
+    author,
+    category,
+    description,
+    image,
+    bio
+  },
+  {
+    headers: {
+      "x-token": token   // REQUIRED
+    }
+  })
     .then((res)=>
       {
         console.log(res.status);
