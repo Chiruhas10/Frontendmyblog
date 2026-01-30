@@ -7,7 +7,7 @@ import axios from 'axios'
 
 const AuthorDashboard = () => {
   const [data, setData] = useState("");
-  const [token, setToken] = useContext(store);
+  const [token] = useContext(store);
   const navigate = useNavigate();
   useEffect(() => {
     if (!token) {
@@ -28,7 +28,7 @@ const AuthorDashboard = () => {
         console.log(err);
 
       })
-  }, [])
+  }, [token])
 
   return (
     <div className='container-fluid'>
