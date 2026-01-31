@@ -8,7 +8,7 @@ const ViewBlogs = () => {
         axios.get(`https://servermyblog-p74i.onrender.com/Blogs`)
             .then((res) => setBlogs(res.data))
             .catch((err) => console.log(err))
-    })
+    }, []);
     const deleteBlog = (Bid) => {
         axios.delete(`https://servermyblog-p74i.onrender.com/Blogs/${Bid}`)
             .then(() => alert('Blog Deleted Successfully'))

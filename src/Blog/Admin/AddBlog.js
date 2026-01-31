@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 
 const AddBlog = () => {
+  const token = localStorage.getItem('token')
   const [Blog, setBlog] = useState({name:"", author:"", title:"", category:"", description:"", image:"", date:"", content:""})
   const updateBlog = (e)=>{
     const {name, value} = e.target
@@ -20,7 +21,7 @@ const AddBlog = () => {
   },
   {
     headers: {
-      "x-token": token   // REQUIRED
+      "x-token": token  // REQUIRED
     }
   })
     .then((res)=>

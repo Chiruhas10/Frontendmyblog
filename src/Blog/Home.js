@@ -46,7 +46,7 @@ const Home = () => {
             </Link>
           ) : (
             <Link to="/author">
-              <button className="btn btn-outline-primary">
+              <button className="btn btn-outline-info text-white fw-semibold">
                  Create Blog
               </button>
             </Link>

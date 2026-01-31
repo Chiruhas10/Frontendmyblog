@@ -20,16 +20,17 @@ const AuthorLogin = () => {
     axios
       .post("https://servermyblog-p74i.onrender.com/Authors/login", details)
       .then((res) => {
-        setToken(res.data.token)
+        localStorage.setItem("token", res.data.token); // ⭐ SAVE TOKEN
+        setToken(res.data.token);                      // optional
+        navigate("/author/dashboard");
       })
+
       .catch((err) => {
         setError("Invalid email or password");
       });
   };
 
-  if(token){
-    navigate("/author/dashboard");  
-  }
+
 
 
   return (
