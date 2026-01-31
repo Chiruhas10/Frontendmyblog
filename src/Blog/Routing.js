@@ -34,7 +34,7 @@ const Routing = () => {
         <Route path='editblog'Component={EditBlog}/>
         <Route path='logout'Component={AdminLogin}/>
         </Route>
-       <Route path='/viewdetails/:id'Component ={ViewDetails} />
+       <Route path='/viewdetails/:id'Component ={<ViewDetails />} />
        <Route path='/author' Component={AuthorLogin} />
        <Route path='/authorregister' Component={AuthorRegister} />
        <Route path='/author/dashboard' Component={AuthorDashboard} >
